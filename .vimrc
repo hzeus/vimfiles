@@ -42,8 +42,4 @@ map <C-l> <C-w>l
 source ~/.vim/Vundlefile
 
 " Plugin settings
-let g:CommandTMaxFiles=25000
-let g:CommandTMaxHeight=5
 let g:vundle_default_git_proto = 'git'
-
-map <Leader>z :ZoomWin<CR>
