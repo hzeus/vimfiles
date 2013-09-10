@@ -48,7 +48,7 @@ colorscheme solarized
 
 " Custom mappings
 " Mostly taken from janus: https://github.com/carlhuda/janus/blob/master/janus/vim/core/before/plugin/mappings.vim
-:nnoremap <leader>n :NERDTreeToggle()<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Some helpers to edit mode
 " http://vimcasts.org/e/14
