@@ -24,6 +24,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/taglist.vim'
 
 filetype plugin indent on     " required!
 "
