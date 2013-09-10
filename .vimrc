@@ -45,3 +45,14 @@ let g:vundle_default_git_proto = 'git'
 syntax enable
 set background=dark
 colorscheme solarized
+
+" Custom mappings
+" Mostly taken from janus: https://github.com/carlhuda/janus/blob/master/janus/vim/core/before/plugin/mappings.vim
+:nnoremap <leader>n :NERDTreeToggle()<CR>
+
+" Some helpers to edit mode
+" http://vimcasts.org/e/14
+nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
+nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
+nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
+nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
