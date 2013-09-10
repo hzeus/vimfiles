@@ -18,6 +18,11 @@ set shiftwidth=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
+" Remove trailing whitespace before saving a file
+if has("autocmd")
+  autocmd BufWritePre * :%s/\s\+$//e
+endif
+
 " Searching
 set hlsearch
 set incsearch
