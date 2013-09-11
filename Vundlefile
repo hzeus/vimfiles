@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'bling/vim-airline'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'itspriddle/ZoomWin'
