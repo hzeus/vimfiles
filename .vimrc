@@ -42,7 +42,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-source ~/.vim/Vundlefile
+source ./Vundlefile
 
 " Plugin settings
 let g:vundle_default_git_proto = 'git'
