@@ -17,6 +17,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'itspriddle/ZoomWin'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'puppetlabs/puppet', {'rtp': 'ext/vim'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
