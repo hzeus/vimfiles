@@ -11,7 +11,6 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'airblade/vim-gitgutter'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
@@ -26,6 +25,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/Colour-Sampler-Pack'
 Bundle 'vim-scripts/taglist.vim'
 
 filetype plugin indent on     " required!
