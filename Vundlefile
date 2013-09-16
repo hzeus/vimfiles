@@ -1,3 +1,4 @@
+filetype on
 filetype off                   " required!
 
 set rtp+=~/my/vimfiles/bundle/vundle/
