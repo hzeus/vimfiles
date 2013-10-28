@@ -3,8 +3,6 @@ if has("autocmd")
   autocmd bufwritepost .gvimrc source ~/.gvimrc
 endif
 
-let NERDTreeShowHidden=1
-
 set guioptions=aA      " Reset GUI options, enabling autoselection (enabling clipboard interactions)
 set guioptions+=c      " Use console dialogs instead of popup dialogs for simple choices
 set guioptions+=e      " Use nice-looking tabs
@@ -28,8 +26,8 @@ map <D-0> :tablast<CR>
 if has("gui_macvim")
   " Command-T for CommandT
   macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CommandT<CR>
-  
+  map <D-t> :CtrlP<CR>
+
   " Command-Shift-F for Ack
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
   map <D-F> :Ack<space>

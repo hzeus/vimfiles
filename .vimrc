@@ -7,6 +7,8 @@ let mapleader = ','
 
 set nocompatible      " Do not be compatible with Vi - be iMproved
 
+set shell=bash
+
 set number            " Enable line numbers
 set ruler             " Enable the bar that shows you in which position your cursor is within the file
 set laststatus=2      " Always show status bar
@@ -51,9 +53,15 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+" wildmenu (e.g. opening files)
+set wildmenu
+set wildmode=full
+hi WildMenu guibg=Orange
+hi WildMenu guifg=Black
+
 " Custom mappings
 " Mostly taken from janus: https://github.com/carlhuda/janus/blob/master/janus/vim/core/before/plugin/mappings.vim
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>f <C-]><CR>
 
 " Some helpers to edit mode
 " http://vimcasts.org/e/14
