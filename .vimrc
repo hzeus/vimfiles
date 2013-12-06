@@ -59,9 +59,16 @@ set wildmode=full
 hi WildMenu guibg=Orange
 hi WildMenu guifg=Black
 
+" Ignore files for ctrlp
+set wildignore+=tags,doc,tmp,log
+
 " Custom mappings
 " Mostly taken from janus: https://github.com/carlhuda/janus/blob/master/janus/vim/core/before/plugin/mappings.vim
 nnoremap <leader>f <C-]><CR>
+nnoremap ü [
+"nnoremap + ]
+inoremap <C-s> <esc>:w<cr>
+nnoremap <C-s> :w<cr>
 
 " Some helpers to edit mode
 " http://vimcasts.org/e/14
