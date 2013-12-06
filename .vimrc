@@ -3,6 +3,20 @@ if has("autocmd")
   autocmd bufwritepost .vimrc source ~/.vimrc
 endif
 
+if &term =~ '^xterm'
+ " solid underscore
+  let &t_SI .= "\<Esc>[3 q"
+  " solid block
+  let &t_EI .= "\<Esc>[0 q"
+  " 1 or 0 -> blinking block
+  " 3 -> blinking underscore
+  " Recent versions of xterm (282 or above) also support
+  " 5 -> blinking vertical bar
+  " 6 -> solid vertical bar
+  "
+  set mouse=a
+endif
+
 let mapleader = ','
 
 set nocompatible      " Do not be compatible with Vi - be iMproved
@@ -44,13 +58,21 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+let ruby_fold=1
+set foldlevelstart=1
+set nofoldenable
+nnoremap <Space> za
+nnoremap <C-CR> <C-]>
+
 source ~/my/vimfiles/Vundlefile
 
 " Plugin settings
 let g:vundle_default_git_proto = 'git'
 
-syntax enable
+"let &t_Co=256
+syntax on
 set background=dark
+let g:solarized_termtrans=1
 colorscheme solarized
 
 " wildmenu (e.g. opening files)
@@ -76,3 +98,10 @@ nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
 nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
 nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
 nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
+
+" ctrl-f should remove focus from current line
+nnoremap <c-f> :s/, :focus//<cr>
+
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+runtime macros/matchit.vim
