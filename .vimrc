@@ -37,6 +37,7 @@ set list listchars=tab:\ \ ,trail:·
 " Remove trailing whitespace before saving a file
 if has("autocmd")
   autocmd BufWritePre * :%s/\s\+$//e
+  autocmd FileType ruby let &colorcolumn=80
 endif
 
 " Searching
