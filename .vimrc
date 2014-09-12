@@ -3,19 +3,17 @@ if has("autocmd")
   autocmd bufwritepost .vimrc source ~/.vimrc
 endif
 
-if &term =~ '^xterm'
- " solid underscore
-  let &t_SI .= "\<Esc>[3 q"
-  " solid block
-  let &t_EI .= "\<Esc>[0 q"
-  " 1 or 0 -> blinking block
-  " 3 -> blinking underscore
-  " Recent versions of xterm (282 or above) also support
-  " 5 -> blinking vertical bar
-  " 6 -> solid vertical bar
-  "
-  set mouse=a
-endif
+" solid underscore
+let &t_SI .= "\<Esc>[3 q"
+" solid block
+let &t_EI .= "\<Esc>[0 q"
+" 1 or 0 -> blinking block
+" 3 -> blinking underscore
+" Recent versions of xterm (282 or above) also support
+" 5 -> blinking vertical bar
+" 6 -> solid vertical bar
+"
+set mouse+=a
 
 let mapleader = ','
 
@@ -70,7 +68,8 @@ source ~/my/vimfiles/Vundlefile
 " Plugin settings
 let g:vundle_default_git_proto = 'git'
 
-"let &t_Co=256
+set t_Co=256
+set ttymouse=xterm2
 syntax on
 set background=dark
 let g:solarized_termtrans=1
@@ -83,7 +82,7 @@ hi WildMenu guibg=Orange
 hi WildMenu guifg=Black
 
 " Ignore files for ctrlp
-set wildignore+=tags,doc,tmp,log
+set wildignore+=tags,doc,tmp,log,.git
 
 " Custom mappings
 " Mostly taken from janus: https://github.com/carlhuda/janus/blob/master/janus/vim/core/before/plugin/mappings.vim
