@@ -1,7 +1,7 @@
 filetype on
 filetype off                   " required!
 
-set rtp+=~/my/vimfiles/bundle/vundle/
+set rtp+=~/my/vimfiles/bundle/Vundle.vim
 call vundle#rc()
 
 " let Vundle manage Vundle
