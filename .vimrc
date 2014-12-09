@@ -67,6 +67,7 @@ source ~/my/vimfiles/Vundlefile
 
 " Plugin settings
 let g:vundle_default_git_proto = 'git'
+let g:vim_json_syntax_conceal = 0
 
 set t_Co=256
 set ttymouse=xterm2
@@ -98,6 +99,9 @@ nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
 nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
 nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
 nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
+
+nmap <leader>n :NERDTreeToggle<cr>
+nmap <leader>m :NERDTreeFind<cr>
 
 " ctrl-f should remove focus from current line
 nnoremap <c-f> :s/, :focus//<cr>
