@@ -15,7 +15,7 @@ let &t_EI .= "\<Esc>[0 q"
 "
 set mouse+=a
 
-let mapleader = ','
+let mapleader = ' '
 
 set nocompatible      " Do not be compatible with Vi - be iMproved
 
@@ -35,6 +35,7 @@ set list listchars=tab:\ \ ,trail:·
 " Remove trailing whitespace before saving a file
 if has("autocmd")
   autocmd BufWritePre * :%s/\s\+$//e
+  autocmd BufNewFile,BufRead *.jbuilder set filetype=ruby
   autocmd FileType ruby let &colorcolumn=80
 endif
 
@@ -60,8 +61,7 @@ map <C-l> <C-w>l
 let ruby_fold=1
 set foldlevelstart=1
 set nofoldenable
-nnoremap <Space> za
-nnoremap <C-CR> <C-]>
+nnoremap , <C-]>
 
 source ~/my/vimfiles/Vundlefile
 
@@ -83,7 +83,7 @@ hi WildMenu guibg=Orange
 hi WildMenu guifg=Black
 
 " Ignore files for ctrlp
-set wildignore+=tags,doc,tmp,log,.git
+set wildignore+=tags,doc,tmp,log,.git,node_modules,deps
 
 " Custom mappings
 " Mostly taken from janus: https://github.com/carlhuda/janus/blob/master/janus/vim/core/before/plugin/mappings.vim
@@ -105,6 +105,9 @@ nmap <leader>m :NERDTreeFind<cr>
 
 " ctrl-f should remove focus from current line
 nnoremap <c-f> :s/, :focus//<cr>
+
+vnoremap Y "*y
+nnoremap Y "*y
 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
