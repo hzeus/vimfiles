@@ -2,61 +2,58 @@ filetype on
 filetype off                   " required!
 
 set rtp+=~/my/vimfiles/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" let Vundle manage itself
+Plugin 'gmarik/Vundle.vim'
 
-" My Bundles here:
-"
-" original repos on github
-Bundle 'bclear'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'altercation/vim-colors-solarized.git'
-Bundle 'andreimaxim/vim-io'
-Bundle 'bling/vim-airline'
-Bundle 'chrisbra/csv.vim'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'elzr/vim-json'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'heartsentwined/vim-emblem'
-Bundle 'itspriddle/ZoomWin'
-Bundle 'juvenn/mustache.vim'
-Bundle 'kana/vim-textobj-user'
-Bundle 'kana/vim-textobj-entire'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'mndrix/prolog.vim'
-Bundle 'nanki/treetop.vim'
-Bundle 'puppetlabs/puppet', {'rtp': 'ext/vim'}
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-surround'
-Bundle 'tybenz/vimdeck'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/AutoTag'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'vim-scripts/SyntaxRange'
-Bundle 'vim-scripts/ingo-library'
-Bundle 'vim-scripts/x12-syntax'
-Bundle 'thoughtbot/vim-rspec'
+" Plugins
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'andreimaxim/vim-io'
+Plugin 'bclear'
+Plugin 'bling/vim-airline'
+Plugin 'chrisbra/csv.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'elzr/vim-json'
+Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
+Plugin 'heartsentwined/vim-emblem'
+Plugin 'itspriddle/ZoomWin'
+Plugin 'juvenn/mustache.vim'
+Plugin 'kana/vim-textobj-entire'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'mndrix/prolog.vim'
+Plugin 'nanki/treetop.vim'
+Plugin 'puppetlabs/puppet', {'rtp': 'ext/vim'}
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-surround'
+Plugin 'tybenz/vimdeck'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/AutoTag'
+Plugin 'vim-scripts/SyntaxRange'
+Plugin 'vim-scripts/ingo-library'
+Plugin 'vim-scripts/taglist.vim'
 
+call vundle#end()             " required!
 filetype plugin indent on     " required!
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" NOTE: comments after Plugin command are not allowed..
