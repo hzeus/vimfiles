@@ -85,6 +85,20 @@ hi WildMenu guifg=Black
 " Ignore files for ctrlp
 set wildignore+=tags,doc,tmp,log,.git,node_modules,deps
 
+" Syntastic taken from https://github.com/vim-syntastic/syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 3
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+
 " Custom mappings
 " Mostly taken from janus: https://github.com/carlhuda/janus/blob/master/janus/vim/core/before/plugin/mappings.vim
 nnoremap <leader>f <C-]><CR>
