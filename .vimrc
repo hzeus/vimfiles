@@ -37,6 +37,8 @@ if has("autocmd")
   autocmd BufWritePre * :%s/\s\+$//e
   autocmd BufNewFile,BufRead *.jbuilder set filetype=ruby
   autocmd FileType ruby let &colorcolumn=80
+
+  autocmd! BufEnter,BufWritePost * Neomake
 endif
 
 " Searching
@@ -67,7 +69,17 @@ source ~/my/vimfiles/Vundlefile
 
 " Plugin settings
 let g:vundle_default_git_proto = 'git'
-let g:vim_json_syntax_conceal = 0
+let g:vim_jsmn_syntax_conceal = 0
+
+function! neomake#makers#ft#ruby#rubocop()
+    return {
+        \ 'args': ['--format', 'emacs', '--display-cop-names'],
+        \ 'errorformat': '%f:%l:%c: %t: %m,%E%f:%l: %m',
+        \ 'postprocess': function('neomake#makers#ft#ruby#RubocopEntryProcess')
+        \ }
+endfunction
+let g:neomake_ruby_enabled_makers = ['rubocop']
+let g:neomake_elixir_enabled_makers = []
 
 set t_Co=256
 set ttymouse=xterm2
@@ -83,21 +95,7 @@ hi WildMenu guibg=Orange
 hi WildMenu guifg=Black
 
 " Ignore files for ctrlp
-set wildignore+=tags,doc,tmp,log,.git,node_modules,deps
-
-" Syntastic taken from https://github.com/vim-syntastic/syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 3
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+set wildignore+=tags,tmp,log,.git,node_modules,deps
 
 " Custom mappings
 " Mostly taken from janus: https://github.com/carlhuda/janus/blob/master/janus/vim/core/before/plugin/mappings.vim
@@ -106,6 +104,7 @@ nnoremap ü [
 "nnoremap + ]
 inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> :w<cr>
+inoremap <Tab> <C-N>
 
 " Some helpers to edit mode
 " http://vimcasts.org/e/14
@@ -124,5 +123,7 @@ vnoremap Y "*y
 nnoremap Y "*y
 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+command! Rubocop :exec ":silent !rubocop -a %" | :redraw! | Neomake
 
 runtime macros/matchit.vim
